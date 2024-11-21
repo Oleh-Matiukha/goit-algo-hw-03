@@ -1,0 +1,15 @@
+from datetime import datetime
+
+def get_days_from_today(date):
+    try:
+        user_date = datetime.strptime(date,"%Y.%m.%d")
+        current_date = datetime.today()
+        days_delta = current_date - user_date
+        print(f"{days_delta.days} days")
+    except ValueError:
+        print("Format is not correct")
+
+
+
+date = input("Write the date in the format yyyy.mm.dd: ")
+get_days_from_today(date)
