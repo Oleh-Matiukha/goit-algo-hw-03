@@ -1,3 +1,4 @@
+# Task 1.
 from datetime import datetime
 
 def get_days_from_today(date):
@@ -9,7 +10,22 @@ def get_days_from_today(date):
     except ValueError:
         print("Format is not correct")
 
-
-
 date = input("Write the date in the format yyyy.mm.dd: ")
 get_days_from_today(date)
+
+
+# Task 2.
+import random
+
+def get_numbers_ticket(min, max, quantity):
+    numbers = list()
+    if min >= 1 and max < 1000 and quantity < max:
+        for num in range(min,max):
+            numbers.append(num)
+        return sorted(random.sample(numbers, quantity))
+    else:
+        return numbers
+
+lottery_numbers = get_numbers_ticket(1, 49, 6)
+print("Ваші лотерейні числа:", lottery_numbers)
+
